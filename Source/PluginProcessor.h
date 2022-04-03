@@ -10,6 +10,8 @@
 
 #include <JuceHeader.h>
 
+#include "Reverb.h"
+
 //==============================================================================
 /**
 */
@@ -53,7 +55,15 @@ public:
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
 
+    static juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
+
+protected:
+    ReverbTank reverb;
+    void updateParameters();
+
 private:
+    juce::AudioProcessorValueTreeState apvts{ *this, nullptr, "Parameters", createParameterLayout() };
+
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (JVerbAudioProcessor)
 };

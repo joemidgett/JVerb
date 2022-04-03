@@ -24,6 +24,17 @@ const double kPi = 3.14159265358979323846264338327950288419716939937510582097494
 #endif
 
 /**
+@convertIntToEnum
+\ingroup ASPiK-GUI
+\def convertIntToEnum
+@brief convert an int to an enum, e.g. for passing to functions
+\param INT - the int to compare with
+\param ENUM - the typed enum to compare with
+\return the int value properly cast as the enum type
+*/
+#define convertIntToEnum(INT,ENUM) static_cast<ENUM>(INT)
+
+/**
 @checkFloatUnderflow
 \ingroup FX-Functions
 
