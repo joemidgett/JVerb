@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <FILTERGRAPH>
-  <FILTER uid="27" x="0.5" y="0.1">
+  <FILTER uid="27" x="0.1900826446280992" y="0.5486381322957199">
     <PLUGIN name="Audio Input" descriptiveName="" format="Internal" category="I/O devices"
             manufacturer="JUCE" version="1.0" file="" uniqueId="246006c0"
             isInstrument="0" fileTime="0" infoUpdateTime="0" numInputs="0"
@@ -61,12 +61,29 @@
       </OUTPUTS>
     </LAYOUT>
   </FILTER>
-  <FILTER uid="31" x="0.5020661157024794" y="0.4941634241245136">
+  <FILTER uid="31" x="0.5020661157024794" y="0.4941634241245136" uiLastX_Normal="1397"
+          uiLastY_Normal="465" uiopen_Normal="1">
     <PLUGIN name="JVerb" format="VST3" category="Fx" manufacturer="Joe Midgett"
             version="1.0.0" file="C:\Users\josep\Dev\JVerb\Builds\VisualStudio2022\x64\Debug\VST3\JVerb.vst3"
-            uniqueId="f59aea2a" isInstrument="0" fileTime="17fed52a3c9" infoUpdateTime="17fed54226c"
+            uniqueId="f59aea2a" isInstrument="0" fileTime="17fee143a67" infoUpdateTime="17fee1cb879"
             numInputs="2" numOutputs="2" isShell="0" uid="e954c1a0"/>
-    <STATE>191.VMjLgXK....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOVMEUy.Ea0cVZtMEcgQWY9vSRC8Vav8lak4Fc9XCLt3hKt3hKt3hKt3hYRUUSTEETIckVwTjQisVTTgkdEYjKAQjYPQSPWgUdMcjKAQjct3hdA4hKt3hKt3hKtnTUv.UQAslXuk0UXoWUFE0YQcEV77RRC8Vav8lak4Fc9vyKVMEUy.Ea0cVZtMEcgQWY9..</STATE>
+    <STATE>1084.VMjLgLCA...O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOVMEUy.Ea0cVZtMEcgQWY9vSRC8Vav8lak4Fc9biL43hUMoFSmA0at3hKt7zJlcUXxEDZisVRxH1a3vVX3fjTLQmKogjYTwVXogiQY8FMwjENHIUUTkEUKMCR38TNtHzSPUDahcFLVkkdUwlX4QyPOAUQpQUPvPDRuEkUOgFQFIFaQQUVxUjUj0TQFQVYvDCUq0DaHYFVWgkbUcUV3fDdLk2LBwDZ2f1S23RUPIUQTMkYpYTV3fjTXYWVFE0Z2YEVzLVUY81XFokd3TDUoEUaHYFVWgkbUcUV3fjPNAyLBwDZ2f1S23RUPIUQTMkYpYTV3fjPYsFMwH1aQcEYn4BZic1cVM1ZvjFR1MiPLg1Mn8zMtTETRUDUSYlZFkENHITV3s1QSsVVWkkb3TTVBkjPHESQFEFLUY0Sn4RZKYGR3sTN1MDUAkTUP0TPRokZvjFRrslQjsVTTkkbEYEYMUjQjUFLwP0ZMwFRlg0UXIWUWkENHIjS2MiPLg1Mn8zMtTETRUDUSYlZFkENHgVVuc1UYQTUFE1YqISUqsVLY4VTxbETMYzXn4BZic1cVM1ZvjFR24xPLQmKogTcyLzSPUjZTEDLDgzaQY0SnYlUZ01YwPkaUYTXrkjdgUWSGM1PUczXkEEaPglKnM1Y2Y0XqASZHMGVosjcHg2R4X2PTETRUAUSAIkVpASZH41ZwjkaMUjVqcGaYUVVwfEZtf1XmcmUisFLogjdtLDS1MiPLg1Mn8zMtTETRUDUSYlZFkENHgmVRE0ZHYFVWgkbUcUV3fjPLQmYS4DMpMkSznVdMECQS0zLDMTS3QTZHU2LC8DTEoFUAACQH8VTV8DZ1ESXxzTQZs1crkkP3DSX4EkLPASTxbkZIoFRlg0UXIWUWkENHI0R34RZKYGR3sTN1MDUAkTUP0TPRokZvjFRxgSLiM0YVkkbYEyUr0DaHYFVWgkbUcUV3fjTLAiKosjcHg2R4X2PTETRUAUSAIkVpASZHIWPskUYiwFRlg0UXIWUWkENHIDSzgzTNQiZS4DMpMjS3QzTLMCVCwTLXkFR0MyPOAUQpQUPvPDRuEkUOglKsI1ZQQUVxUjUjQ0ZVE1Z3TUXSUULXglKnM1Y2Y0XqASZHgGUosjcHg2R4X2PTETRUAUSAIkVpASZHISUFMFSUw1XqcWLWoVRpgjYXcEVxU0UYgCRRszcHk1R1gDdKkic4sDTEwlXmAiUYoWUrIVdzLjKt3hKt3hKt3hKtXlTU0DUQAURWoULEYzXqEEUXoWQF4RPDYFTzDzUXkWSG4RPDYmKtnWPt3hKt3hKt3hKJUELPUTPqI1aYcEV5UkQQcVTWgEOujzPu0Fbu4VYtQmO77hUSQ0LPwVcmklaSQWXzUlO..</STATE>
+    <LAYOUT>
+      <INPUTS>
+        <BUS index="0" layout="L R"/>
+      </INPUTS>
+      <OUTPUTS>
+        <BUS index="0" layout="L R"/>
+      </OUTPUTS>
+    </LAYOUT>
+  </FILTER>
+  <FILTER uid="32" x="0.5041322314049587" y="0.1867704280155642" uiLastX_Normal="855"
+          uiLastY_Normal="55" uiopen_Normal="1">
+    <PLUGIN name="AudioFilePlayer" format="VST3" category="Fx" manufacturer="Matkat Music LLC"
+            version="1.0.0" file="C:\Users\josep\Dev\AudioFilePlayer\Builds\VisualStudio2022\x64\Debug\VST3\AudioFilePlayer.vst3"
+            uniqueId="79fe81c" isInstrument="0" fileTime="17ebf3d9b72" infoUpdateTime="17fee1cb87a"
+            numInputs="2" numOutputs="2" isShell="0" uid="e95d02c7"/>
+    <STATE>316.VMjLgLS....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOVMEUy.Ea0cVZtMEcgQWY9vSRC8Vav8lak4Fc9DSMy3BTIISX1UEaho2ZVkUdAAkKAwDUigWRWkEcQ0VTucmUY4BQPAUQLolShUELhsVRxHlXuESX4UkQhIFLTMVdqECVhUjZho2ZwHldMczU5slQhYWUrIlXQUkV1EzUYgGNv.UcMU0TlQDUgg1ZVkEcQcDRSUkQiQmdFIVdt3hKt3hKt3hKt3hKtXlTU0DUQAURWoULEYzXqEEUXoWQF4RPDYFTzDzUXkWSG4RPDYmKtnWPt3hKt3hKt3hKJUELPUTPqI1aYcEV5UkQQcVTWgEOujzPu0Fbu4VYtQmO77hUSQ0LPwVcmklaSQWXzUlO..</STATE>
     <LAYOUT>
       <INPUTS>
         <BUS index="0" layout="L R"/>
@@ -78,4 +95,6 @@
   </FILTER>
   <CONNECTION srcFilter="31" srcChannel="0" dstFilter="29" dstChannel="0"/>
   <CONNECTION srcFilter="31" srcChannel="1" dstFilter="29" dstChannel="1"/>
+  <CONNECTION srcFilter="32" srcChannel="0" dstFilter="31" dstChannel="0"/>
+  <CONNECTION srcFilter="32" srcChannel="1" dstFilter="31" dstChannel="1"/>
 </FILTERGRAPH>
