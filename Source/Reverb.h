@@ -3,6 +3,7 @@
 #pragma once
 
 #include <memory>
+#include <math.h>
 #include <time.h>
 
 // --- constants & enumerations
@@ -11,6 +12,7 @@
 //      that #includes this file (sometimes needed)
 const double kSmallestPositiveFloatValue = 1.175494351e-38;         /* min positive value */
 const double kSmallestNegativeFloatValue = -1.175494351e-38;         /* min negative value */
+const double kSqrtTwo = pow(2.0, 0.5);
 
 // --- prevent accidental double inclusion
 #ifndef _guiconstants_h
@@ -22,6 +24,27 @@ const double kSmallestNegativeFloatValue = -1.175494351e-38;         /* min nega
 const double kPi = 3.14159265358979323846264338327950288419716939937510582097494459230781640628620899;
 
 #endif
+
+/**
+@doLinearInterpolation
+\ingroup FX-Functions
+
+@brief performs linear interpolation of fractional x distance between two adjacent (x,y) points;
+returns interpolated value
+
+\param y1 - the y coordinate of the first point
+\param y2 - the 2 coordinate of the second point
+\param x - the interpolation location as a fractional distance between x1 and x2 (which are not needed)
+\return the interpolated value or y2 if the interpolation is outside the x interval
+*/
+inline double doLinearInterpolation(double y1, double y2, double fractional_X)
+{
+	// --- check invalid condition
+	if (fractional_X >= 1.0) return y2;
+
+	// --- use weighted sum method of interpolating
+	return fractional_X * y2 + (1.0 - fractional_X) * y1;
+}
 
 /**
 @convertIntToEnum
@@ -107,6 +130,20 @@ inline double doUnipolarModulationFromMax(double unipolarModulatorValue, double 
 inline double bipolarToUnipolar(double value)
 {
 	return 0.5 * value + 0.5;
+}
+
+/**
+@unipolarToBipolar
+\ingroup FX-Functions
+
+@brief calculates the bipolar [-1.0, +1.0] value FROM a unipolar [0.0, +1.0] value
+
+\param value - value to convert
+\return the bipolar value
+*/
+inline double unipolarToBipolar(double value)
+{
+	return 2.0 * value - 1.0;
 }
 
 /**
