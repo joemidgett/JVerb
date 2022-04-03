@@ -225,7 +225,7 @@ juce::AudioProcessorValueTreeState::ParameterLayout JVerbAudioProcessor::createP
         juce::NormalisableRange<float>(-20.0, 20.0, 0.01, 1.0),
         -6.0));
 
-    layout.add(std::make_unique<juce::AudioParameterFloat>("preDelay_mSec",
+    layout.add(std::make_unique<juce::AudioParameterFloat>("preDelayTime_mSec",
         "Pre Delay",
         juce::NormalisableRange<float>(0, 100.0, 0.01, 1.0),
         25.0));
@@ -235,7 +235,7 @@ juce::AudioProcessorValueTreeState::ParameterLayout JVerbAudioProcessor::createP
         juce::NormalisableRange<float>(-60.0, 12.0, 0.01, 1.0),
         -12.0));
 
-    layout.add(std::make_unique<juce::AudioParameterFloat>("dryLevel_db",
+    layout.add(std::make_unique<juce::AudioParameterFloat>("dryLevel_dB",
         "Dry Level",
         juce::NormalisableRange<float>(-60.0, 12.0, 0.01, 1.0),
         0.0));
@@ -250,12 +250,12 @@ juce::AudioProcessorValueTreeState::ParameterLayout JVerbAudioProcessor::createP
         juce::NormalisableRange<float>(1.0, 100.0, 0.01, 1.0),
         85.0));
 
-    layout.add(std::make_unique<juce::AudioParameterFloat>("fixedDelayMax_mSec",
+    layout.add(std::make_unique<juce::AudioParameterFloat>("fixeDelayMax_mSec",
         "Max Fixed Delay",
         juce::NormalisableRange<float>(0.0, 100.0, 0.01, 1.0),
         81.0));
 
-    layout.add(std::make_unique<juce::AudioParameterFloat>("fixedDelayWeight_Pct",
+    layout.add(std::make_unique<juce::AudioParameterFloat>("fixeDelayWeight_Pct",
         "Allpass Filter Fixed Delay Weight",
         juce::NormalisableRange<float>(1.0, 100.0, 0.01, 1.0),
         100.0));
