@@ -5,6 +5,7 @@
               pluginManufacturer="Joe Midgett" companyName="Joe Midgett">
   <MAINGROUP id="Idkd6V" name="JVerb">
     <GROUP id="{94DB8C61-3264-CD90-CD8B-7033EEC3DA69}" name="Source">
+      <FILE id="wzfYmj" name="Reverb.h" compile="0" resource="0" file="Source/Reverb.h"/>
       <FILE id="wxqnIH" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="GNJm3w" name="PluginProcessor.h" compile="0" resource="0"
