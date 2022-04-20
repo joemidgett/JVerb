@@ -5,15 +5,56 @@
               pluginManufacturer="Joe Midgett" companyName="Joe Midgett">
   <MAINGROUP id="Idkd6V" name="JVerb">
     <GROUP id="{94DB8C61-3264-CD90-CD8B-7033EEC3DA69}" name="Source">
-      <FILE id="luKWDM" name="Reverb.cpp" compile="1" resource="0" file="Source/Reverb.cpp"/>
-      <FILE id="wzfYmj" name="Reverb.h" compile="0" resource="0" file="Source/Reverb.h"/>
+      <GROUP id="{D7306843-8F32-DE84-5B1C-C03875666335}" name="DSP">
+        <FILE id="Tmlemm" name="AudioFilter.cpp" compile="1" resource="0" file="Source/DSP/AudioFilter.cpp"/>
+        <FILE id="jXBdh7" name="AudioFilter.h" compile="0" resource="0" file="Source/DSP/AudioFilter.h"/>
+        <FILE id="UEfHeo" name="AudioFilterParameters.h" compile="0" resource="0"
+              file="Source/DSP/AudioFilterParameters.h"/>
+        <FILE id="ET5Rhr" name="Biquad.cpp" compile="1" resource="0" file="Source/DSP/Biquad.cpp"/>
+        <FILE id="Mu8NpC" name="Biquad.h" compile="0" resource="0" file="Source/DSP/Biquad.h"/>
+        <FILE id="f6dWHi" name="BiquadParameters.h" compile="0" resource="0"
+              file="Source/DSP/BiquadParameters.h"/>
+        <FILE id="pgoNTf" name="CircularBuffer.h" compile="0" resource="0"
+              file="Source/DSP/CircularBuffer.h"/>
+        <FILE id="Ig3bOK" name="DelayAPF.h" compile="0" resource="0" file="Source/DSP/DelayAPF.h"/>
+        <FILE id="D2ledW" name="DelayAPFParameters.h" compile="0" resource="0"
+              file="Source/DSP/DelayAPFParameters.h"/>
+        <FILE id="tyVIXk" name="IAudioSignalGenerator.h" compile="0" resource="0"
+              file="Source/DSP/IAudioSignalGenerator.h"/>
+        <FILE id="FEAx2j" name="IAudioSignalProcessor.h" compile="0" resource="0"
+              file="Source/DSP/IAudioSignalProcessor.h"/>
+        <FILE id="S6OYdp" name="LFO.cpp" compile="1" resource="0" file="Source/DSP/LFO.cpp"/>
+        <FILE id="Im8ecM" name="LFO.h" compile="0" resource="0" file="Source/DSP/LFO.h"/>
+        <FILE id="TIRypZ" name="NestedDelayAPF.h" compile="0" resource="0"
+              file="Source/DSP/NestedDelayAPF.h"/>
+        <FILE id="KepeMs" name="NestedDelayAPFParameters.h" compile="0" resource="0"
+              file="Source/DSP/NestedDelayAPFParameters.h"/>
+        <FILE id="GMtb1G" name="OscillatorParameters.h" compile="0" resource="0"
+              file="Source/DSP/OscillatorParameters.h"/>
+        <FILE id="vw5Q6u" name="ReverbTank.h" compile="0" resource="0" file="Source/DSP/ReverbTank.h"/>
+        <FILE id="ZMeo6o" name="ReverbTankParameters.h" compile="0" resource="0"
+              file="Source/DSP/ReverbTankParameters.h"/>
+        <FILE id="IpR5b8" name="SignalGenData.h" compile="0" resource="0" file="Source/DSP/SignalGenData.h"/>
+        <FILE id="Kwoa3j" name="SimpleDelay.h" compile="0" resource="0" file="Source/DSP/SimpleDelay.h"/>
+        <FILE id="XsjasC" name="SimpleDelayParameters.h" compile="0" resource="0"
+              file="Source/DSP/SimpleDelayParameters.h"/>
+        <FILE id="mRX6SC" name="SimpleLPF.h" compile="0" resource="0" file="Source/DSP/SimpleLPF.h"/>
+        <FILE id="bdD5tq" name="SimpleLPFParameters.h" compile="0" resource="0"
+              file="Source/DSP/SimpleLPFParameters.h"/>
+        <FILE id="Cig6gW" name="TwoBandShelvingFilter.h" compile="0" resource="0"
+              file="Source/DSP/TwoBandShelvingFilter.h"/>
+        <FILE id="GfI2Gb" name="TwoBandShelvingFilterParameters.h" compile="0"
+              resource="0" file="Source/DSP/TwoBandShelvingFilterParameters.h"/>
+        <FILE id="aosOhb" name="Utilities.h" compile="0" resource="0" file="Source/DSP/Utilities.h"/>
+      </GROUP>
+      <GROUP id="{C1BAE35E-BC45-29B6-669C-866A3EBD149B}" name="GUI"/>
+      <FILE id="fYuyen" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="qrADNb" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
       <FILE id="wxqnIH" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="GNJm3w" name="PluginProcessor.h" compile="0" resource="0"
             file="Source/PluginProcessor.h"/>
-      <FILE id="fYuyen" name="PluginEditor.cpp" compile="1" resource="0"
-            file="Source/PluginEditor.cpp"/>
-      <FILE id="qrADNb" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
     </GROUP>
   </MAINGROUP>
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
