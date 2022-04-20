@@ -9,8 +9,7 @@
 #pragma once
 
 #include <JuceHeader.h>
-
-#include "Reverb.h"
+#include "DSP/ReverbTank.h"
 
 //==============================================================================
 /**
