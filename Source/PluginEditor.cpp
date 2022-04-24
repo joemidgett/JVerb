@@ -13,6 +13,11 @@
 JVerbAudioProcessorEditor::JVerbAudioProcessorEditor (JVerbAudioProcessor& p)
     : AudioProcessorEditor (&p), audioProcessor (p)
 {
+    juce::LookAndFeel::setDefaultLookAndFeel(&jVerbLnf);
+
+    jVerbSlider.setSliderStyle(juce::Slider::SliderStyle::RotaryHorizontalVerticalDrag);
+    jVerbSlider.setTextBoxStyle(juce::Slider::TextEntryBoxPosition::TextBoxBelow, false, 100, 25);
+    addAndMakeVisible(jVerbSlider);
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
     setSize (400, 300);
@@ -20,6 +25,7 @@ JVerbAudioProcessorEditor::JVerbAudioProcessorEditor (JVerbAudioProcessor& p)
 
 JVerbAudioProcessorEditor::~JVerbAudioProcessorEditor()
 {
+    juce::LookAndFeel::setDefaultLookAndFeel(nullptr);
 }
 
 //==============================================================================
@@ -33,4 +39,5 @@ void JVerbAudioProcessorEditor::resized()
 {
     // This is generally where you'll want to lay out the positions of any
     // subcomponents in your editor..
+    jVerbSlider.setBounds(getWidth() / 2 - 100, getHeight() / 2 - 100, 200, 200);
 }
