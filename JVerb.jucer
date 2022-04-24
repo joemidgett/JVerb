@@ -47,7 +47,12 @@
               resource="0" file="Source/DSP/TwoBandShelvingFilterParameters.h"/>
         <FILE id="aosOhb" name="Utilities.h" compile="0" resource="0" file="Source/DSP/Utilities.h"/>
       </GROUP>
-      <GROUP id="{C1BAE35E-BC45-29B6-669C-866A3EBD149B}" name="GUI"/>
+      <GROUP id="{C1BAE35E-BC45-29B6-669C-866A3EBD149B}" name="GUI">
+        <FILE id="DpUwPo" name="JVerbLookAndFeel.cpp" compile="1" resource="0"
+              file="Source/GUI/JVerbLookAndFeel.cpp"/>
+        <FILE id="kmx99Z" name="JVerbLookAndFeel.h" compile="0" resource="0"
+              file="Source/GUI/JVerbLookAndFeel.h"/>
+      </GROUP>
       <FILE id="fYuyen" name="PluginEditor.cpp" compile="1" resource="0"
             file="Source/PluginEditor.cpp"/>
       <FILE id="qrADNb" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
