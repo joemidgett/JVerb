@@ -50,21 +50,21 @@ struct ReverbTankParameters
 	// --- tweaking parameters - you may not want to expose these
 	//     in the final plugin!
 	// --- See the book for all the details on how these tweakers work!!
-	double apfDelayMax_mSec = 5.0;					///< APF max delay time
-	double apfDelayWeight_Pct = 100.0;				///< APF max delay weighying
-	double fixeDelayMax_mSec = 50.0;				///< fixed delay max time
+	double apfDelayMax_mSec = 33.0;					///< APF max delay time
+	double apfDelayWeight_Pct = 85.0;				///< APF max delay weighying
+	double fixeDelayMax_mSec = 81.0;				///< fixed delay max time
 	double fixeDelayWeight_Pct = 100.0;				///< fixed delay max weighying
 
 	// --- direct control parameters
-	double preDelayTime_mSec = 0.0;					///< pre-delay time in mSec
-	double lpf_g = 0.0;								///< LPF g coefficient
-	double kRT = 0.0;								///< reverb time, 0 to 1
+	double preDelayTime_mSec = 150.0;					///< pre-delay time in mSec
+	double lpf_g = 0.3;								///< LPF g coefficient
+	double kRT = 0.9;								///< reverb time, 0 to 1
 
-	double lowShelf_fc = 0.0;						///< low shelf fc
-	double lowShelfBoostCut_dB = 0.0;				///< low shelf gain
-	double highShelf_fc = 0.0;						///< high shelf fc
-	double highShelfBoostCut_dB = 0.0;				///< high shelf gain
+	double lowShelf_fc = 150.0;						///< low shelf fc
+	double lowShelfBoostCut_dB = -20.0;				///< low shelf gain
+	double highShelf_fc = 4000.0;						///< high shelf fc
+	double highShelfBoostCut_dB = -6.0;				///< high shelf gain
 
-	double wetLevel_dB = -3.0;						///< wet output level in dB
-	double dryLevel_dB = -3.0;						///< dry output level in dB
+	double wetLevel_dB = -12.0;						///< wet output level in dB
+	double dryLevel_dB = 0.0;						///< dry output level in dB
 };
