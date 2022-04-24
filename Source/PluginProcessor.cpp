@@ -162,8 +162,8 @@ bool JVerbAudioProcessor::hasEditor() const
 
 juce::AudioProcessorEditor* JVerbAudioProcessor::createEditor()
 {
-    return new juce::GenericAudioProcessorEditor(*this);
-    // return new JVerbAudioProcessorEditor (*this);
+    // return new juce::GenericAudioProcessorEditor(*this);
+    return new JVerbAudioProcessorEditor (*this);
 }
 
 //==============================================================================
