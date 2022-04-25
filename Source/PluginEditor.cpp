@@ -39,5 +39,9 @@ void JVerbAudioProcessorEditor::resized()
 {
     // This is generally where you'll want to lay out the positions of any
     // subcomponents in your editor..
-    jVerbSlider.setBounds(getWidth() / 2 - 100, getHeight() / 2 - 100, 200, 200);
+    jVerbDrySlider.setBounds(0, 30, 130, 150);
+    jVerbLowGainSlider.setBounds(jVerbDrySlider.getBounds().withX(jVerbDrySlider.getRight()));
+    jVerbReverbTimeSlider.setBounds(jVerbLowGainSlider.getBounds().withX(jVerbLowGainSlider.getRight()));
+    jVerbHighGainSlider.setBounds(jVerbReverbTimeSlider.getBounds().withX(jVerbReverbTimeSlider.getRight()));
+    jVerbWetSlider.setBounds(jVerbHighGainSlider.getBounds().withX(jVerbHighGainSlider.getRight()));
 }
