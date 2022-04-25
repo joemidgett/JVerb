@@ -52,6 +52,8 @@
               file="Source/GUI/JVerbLookAndFeel.cpp"/>
         <FILE id="kmx99Z" name="JVerbLookAndFeel.h" compile="0" resource="0"
               file="Source/GUI/JVerbLookAndFeel.h"/>
+        <FILE id="bMCPVo" name="JVerbSlider.cpp" compile="1" resource="0" file="Source/GUI/JVerbSlider.cpp"/>
+        <FILE id="sOyDyu" name="JVerbSlider.h" compile="0" resource="0" file="Source/GUI/JVerbSlider.h"/>
       </GROUP>
       <FILE id="fYuyen" name="PluginEditor.cpp" compile="1" resource="0"
             file="Source/PluginEditor.cpp"/>
