@@ -19,11 +19,11 @@ JVerbAudioProcessorEditor::JVerbAudioProcessorEditor (JVerbAudioProcessor& p)
     jVerbHighGainSlider(*audioProcessor.apvts.getParameter("highShelfBoostCut_dB"), "dB"),
     jVerbWetSlider(*audioProcessor.apvts.getParameter("wetLevel_dB"), "dB"),
 
-    jVerbDrySliderAttachment(audioProcessor.apvts.getParameter("dryLevel_dB"), jVerbDrySlider),
-    jVerbLowGainSliderAttachment(*audioProcessor.apvts.getParameter("lowShelfBoostCut_dB"), jVerbLowGainSlider),
-    jVerbReverbTimeSliderAttachment(*audioProcessor.apvts.getParameter("kRT"), jVerbReverbTimeSlider),
-    jVerbHighGainSliderAttachment(*audioProcessor.apvts.getParameter("highShelfBoostCut_dB"), jVerbHighGainSlider),
-    jVerbWetSliderAttachment(*audioProcessor.apvts.getParameter("wetLevel_dB"), jVerbWetSlider)
+    jVerbDrySliderAttachment(audioProcessor.apvts, "dryLevel_dB", jVerbDrySlider),
+    jVerbLowGainSliderAttachment(audioProcessor.apvts, "lowShelfBoostCut_dB", jVerbLowGainSlider),
+    jVerbReverbTimeSliderAttachment(audioProcessor.apvts, "kRT", jVerbReverbTimeSlider),
+    jVerbHighGainSliderAttachment(audioProcessor.apvts, "highShelfBoostCut_dB", jVerbHighGainSlider),
+    jVerbWetSliderAttachment(audioProcessor.apvts, "wetLevel_dB", jVerbWetSlider)
 {
     juce::LookAndFeel::setDefaultLookAndFeel(&jVerbLnf);
 

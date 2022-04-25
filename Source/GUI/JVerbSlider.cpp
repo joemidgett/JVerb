@@ -2,7 +2,7 @@
 
 #include "JVerbSlider.h"
 
-JVerbSlider::JVerbSlider()
+JVerbSlider::JVerbSlider(juce::RangedAudioParameter& rap, const juce::String& unitSuffix)
 {
 	auto jVerbRotarySliderParams = getRotaryParameters();
 	jVerbRotarySliderParams.startAngleRadians = juce::MathConstants<float>::pi * 1.2f;
