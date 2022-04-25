@@ -15,17 +15,17 @@ Custom parameter structure for the SimpleLPFP object. Used for reverb algorithms
 */
 struct SimpleLPFParameters
 {
-	SimpleLPFParameters() {}
-	/** all FXObjects parameter objects require overloaded= operator so remember to add new entries if you add new variables. */
-	SimpleLPFParameters& operator=(const SimpleLPFParameters& params)	// need this override for collections to work
-	{
-		if (this == &params)
-			return *this;
+    SimpleLPFParameters() {}
+    /** all FXObjects parameter objects require overloaded= operator so remember to add new entries if you add new variables. */
+    SimpleLPFParameters& operator=(const SimpleLPFParameters& params)	// need this override for collections to work
+    {
+        if (this == &params)
+            return *this;
 
-		g = params.g;
-		return *this;
-	}
+        g = params.g;
+        return *this;
+    }
 
-	// --- individual parameters
-	double g = 0.0; ///< simple LPF g value
+    // --- individual parameters
+    double g = 0.0; ///< simple LPF g value
 };

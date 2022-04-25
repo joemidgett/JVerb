@@ -17,9 +17,9 @@ const unsigned int NUM_CHANNELS = 2; // stereo
 // --- prevent accidental double inclusion
 #ifndef _guiconstants_h
 /**
-	@kPi
-	\ingroup Constants-Enums
-	@brief pi to 80 decimal places
+    @kPi
+    \ingroup Constants-Enums
+    @brief pi to 80 decimal places
 */
 const double kPi = 3.14159265358979323846264338327950288419716939937510582097494459230781640628620899;
 
@@ -39,11 +39,11 @@ returns interpolated value
 */
 inline double doLinearInterpolation(double y1, double y2, double fractional_X)
 {
-	// --- check invalid condition
-	if (fractional_X >= 1.0) return y2;
+    // --- check invalid condition
+    if (fractional_X >= 1.0) return y2;
 
-	// --- use weighted sum method of interpolating
-	return fractional_X * y2 + (1.0 - fractional_X) * y1;
+    // --- use weighted sum method of interpolating
+    return fractional_X * y2 + (1.0 - fractional_X) * y1;
 }
 
 /**
@@ -68,18 +68,18 @@ inline double doLinearInterpolation(double y1, double y2, double fractional_X)
 */
 inline bool checkFloatUnderflow(double& value)
 {
-	bool retValue = false;
-	if (value > 0.0 && value < kSmallestPositiveFloatValue)
-	{
-		value = 0;
-		retValue = true;
-	}
-	else if (value < 0.0 && value > kSmallestNegativeFloatValue)
-	{
-		value = 0;
-		retValue = true;
-	}
-	return retValue;
+    bool retValue = false;
+    if (value > 0.0 && value < kSmallestPositiveFloatValue)
+    {
+        value = 0;
+        retValue = true;
+    }
+    else if (value < 0.0 && value > kSmallestNegativeFloatValue)
+    {
+        value = 0;
+        retValue = true;
+    }
+    return retValue;
 }
 
 /**
@@ -94,8 +94,8 @@ inline bool checkFloatUnderflow(double& value)
 */
 inline void boundValue(double& value, double minValue, double maxValue)
 {
-	value = fmin(value, maxValue);
-	value = fmax(value, minValue);
+    value = fmin(value, maxValue);
+    value = fmax(value, minValue);
 }
 
 /**
@@ -111,11 +111,11 @@ inline void boundValue(double& value, double minValue, double maxValue)
 */
 inline double doUnipolarModulationFromMax(double unipolarModulatorValue, double minValue, double maxValue)
 {
-	// --- UNIPOLAR bound
-	boundValue(unipolarModulatorValue, 0.0, 1.0);
+    // --- UNIPOLAR bound
+    boundValue(unipolarModulatorValue, 0.0, 1.0);
 
-	// --- modulate from maximum value downwards
-	return maxValue - (1.0 - unipolarModulatorValue) * (maxValue - minValue);
+    // --- modulate from maximum value downwards
+    return maxValue - (1.0 - unipolarModulatorValue) * (maxValue - minValue);
 }
 
 /**
@@ -129,7 +129,7 @@ inline double doUnipolarModulationFromMax(double unipolarModulatorValue, double 
 */
 inline double bipolarToUnipolar(double value)
 {
-	return 0.5 * value + 0.5;
+    return 0.5 * value + 0.5;
 }
 
 /**
@@ -143,7 +143,7 @@ inline double bipolarToUnipolar(double value)
 */
 inline double unipolarToBipolar(double value)
 {
-	return 2.0 * value - 1.0;
+    return 2.0 * value - 1.0;
 }
 
 /**
@@ -214,10 +214,10 @@ Use this strongly typed enum to easily set the filter algorithm for the AudioFil
 \date Date : 2018 / 09 / 7
 */
 enum class filterAlgorithm {
-	kLPF1P, kLPF1, kHPF1, kLPF2, kHPF2, kBPF2, kBSF2, kButterLPF2, kButterHPF2, kButterBPF2,
-	kButterBSF2, kMMALPF2, kMMALPF2B, kLowShelf, kHiShelf, kNCQParaEQ, kCQParaEQ, kLWRLPF2, kLWRHPF2,
-	kAPF1, kAPF2, kResonA, kResonB, kMatchLP2A, kMatchLP2B, kMatchBP2A, kMatchBP2B,
-	kImpInvLP1, kImpInvLP2
+    kLPF1P, kLPF1, kHPF1, kLPF2, kHPF2, kBPF2, kBSF2, kButterLPF2, kButterHPF2, kButterBPF2,
+    kButterBSF2, kMMALPF2, kMMALPF2B, kLowShelf, kHiShelf, kNCQParaEQ, kCQParaEQ, kLWRLPF2, kLWRHPF2,
+    kAPF1, kAPF2, kResonA, kResonB, kMatchLP2A, kMatchLP2B, kMatchBP2A, kMatchBP2B,
+    kImpInvLP1, kImpInvLP2
 }; // --- you will add more here...
 
 /**

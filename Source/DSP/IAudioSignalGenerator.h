@@ -21,13 +21,13 @@ Outpput I/F:
 class IAudioSignalGenerator
 {
 public:
-	// --- pure virtual, derived classes must implement or will not compile
-	//     also means this is a pure abstract base class and is incomplete,
-	//     so it can only be used as a base class
-	//
-	/** Sample rate may or may not be required, but usually is */
-	virtual bool reset(double _sampleRate) = 0;
+    // --- pure virtual, derived classes must implement or will not compile
+    //     also means this is a pure abstract base class and is incomplete,
+    //     so it can only be used as a base class
+    //
+    /** Sample rate may or may not be required, but usually is */
+    virtual bool reset(double _sampleRate) = 0;
 
-	/** render the generator output */
-	virtual const SignalGenData renderAudioOutput() = 0;
+    /** render the generator output */
+    virtual const SignalGenData renderAudioOutput() = 0;
 };

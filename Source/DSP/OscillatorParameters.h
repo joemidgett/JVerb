@@ -17,19 +17,19 @@ Custom parameter structure for the LFO and DFOscillator objects.
 */
 struct OscillatorParameters
 {
-	OscillatorParameters() {}
-	/** all FXObjects parameter objects require overloaded= operator so remember to add new entries if you add new variables. */
-	OscillatorParameters& operator=(const OscillatorParameters& params)	// need this override for collections to work
-	{
-		if (this == &params)
-			return *this;
+    OscillatorParameters() {}
+    /** all FXObjects parameter objects require overloaded= operator so remember to add new entries if you add new variables. */
+    OscillatorParameters& operator=(const OscillatorParameters& params)	// need this override for collections to work
+    {
+        if (this == &params)
+            return *this;
 
-		waveform = params.waveform;
-		frequency_Hz = params.frequency_Hz;
-		return *this;
-	}
+        waveform = params.waveform;
+        frequency_Hz = params.frequency_Hz;
+        return *this;
+    }
 
-	// --- individual parameters
-	generatorWaveform waveform = generatorWaveform::kTriangle; ///< the current waveform
-	double frequency_Hz = 0.0;	///< oscillator frequency
+    // --- individual parameters
+    generatorWaveform waveform = generatorWaveform::kTriangle; ///< the current waveform
+    double frequency_Hz = 0.0;	///< oscillator frequency
 };

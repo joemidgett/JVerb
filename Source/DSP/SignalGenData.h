@@ -16,10 +16,10 @@ This is the output structure for audio generator objects that can render up to f
 // --- structure to send output data from signal gen; you can add more outputs here
 struct SignalGenData
 {
-	SignalGenData() {}
+    SignalGenData() {}
 
-	double normalOutput = 0.0;			///< normal
-	double invertedOutput = 0.0;		///< inverted
-	double quadPhaseOutput_pos = 0.0;	///< 90 degrees out
-	double quadPhaseOutput_neg = 0.0;	///< -90 degrees out
+    double normalOutput = 0.0;			///< normal
+    double invertedOutput = 0.0;		///< inverted
+    double quadPhaseOutput_pos = 0.0;	///< 90 degrees out
+    double quadPhaseOutput_neg = 0.0;	///< -90 degrees out
 };

@@ -29,110 +29,110 @@ Control I/F:
 class LFO : public IAudioSignalGenerator
 {
 public:
-	LFO() { srand(time(NULL)); }	/* C-TOR */
-	virtual ~LFO() {}				/* D-TOR */
+    LFO() { srand(time(NULL)); }	/* C-TOR */
+    virtual ~LFO() {}				/* D-TOR */
 
-	/** reset members to initialized state */
-	virtual bool reset(double _sampleRate)
-	{
-		sampleRate = _sampleRate;
-		phaseInc = lfoParameters.frequency_Hz / sampleRate;
+    /** reset members to initialized state */
+    virtual bool reset(double _sampleRate)
+    {
+        sampleRate = _sampleRate;
+        phaseInc = lfoParameters.frequency_Hz / sampleRate;
 
-		// --- timebase variables
-		modCounter = 0.0;			///< modulo counter [0.0, +1.0]
-		modCounterQP = 0.25;		///<Quad Phase modulo counter [0.0, +1.0]
+        // --- timebase variables
+        modCounter = 0.0;			///< modulo counter [0.0, +1.0]
+        modCounterQP = 0.25;		///<Quad Phase modulo counter [0.0, +1.0]
 
-		return true;
-	}
+        return true;
+    }
 
-	/** get parameters: note use of custom structure for passing param data */
-	/**
-	\return OscillatorParameters custom data structure
-	*/
-	OscillatorParameters getParameters() { return lfoParameters; }
+    /** get parameters: note use of custom structure for passing param data */
+    /**
+    \return OscillatorParameters custom data structure
+    */
+    OscillatorParameters getParameters() { return lfoParameters; }
 
-	/** set parameters: note use of custom structure for passing param data */
-	/**
-	\param OscillatorParameters custom data structure
-	*/
-	void setParameters(const OscillatorParameters& params)
-	{
-		if (params.frequency_Hz != lfoParameters.frequency_Hz)
-			// --- update phase inc based on osc freq and fs
-			phaseInc = params.frequency_Hz / sampleRate;
+    /** set parameters: note use of custom structure for passing param data */
+    /**
+    \param OscillatorParameters custom data structure
+    */
+    void setParameters(const OscillatorParameters& params)
+    {
+        if (params.frequency_Hz != lfoParameters.frequency_Hz)
+            // --- update phase inc based on osc freq and fs
+            phaseInc = params.frequency_Hz / sampleRate;
 
-		lfoParameters = params;
-	}
+        lfoParameters = params;
+    }
 
-	/** render a new audio output structure */
-	virtual const SignalGenData renderAudioOutput();
+    /** render a new audio output structure */
+    virtual const SignalGenData renderAudioOutput();
 
 protected:
-	// --- parameters
-	OscillatorParameters lfoParameters; ///< obejcgt parameters
+    // --- parameters
+    OscillatorParameters lfoParameters; ///< obejcgt parameters
 
-	// --- sample rate
-	double sampleRate = 0.0;			///< sample rate
+    // --- sample rate
+    double sampleRate = 0.0;			///< sample rate
 
-	// --- timebase variables
-	double modCounter = 0.0;			///< modulo counter [0.0, +1.0]
-	double phaseInc = 0.0;				///< phase inc = fo/fs
-	double modCounterQP = 0.25;			///<Quad Phase modulo counter [0.0, +1.0]
+    // --- timebase variables
+    double modCounter = 0.0;			///< modulo counter [0.0, +1.0]
+    double phaseInc = 0.0;				///< phase inc = fo/fs
+    double modCounterQP = 0.25;			///<Quad Phase modulo counter [0.0, +1.0]
 
-	/** check the modulo counter and wrap if needed */
-	inline bool checkAndWrapModulo(double& moduloCounter, double phaseInc)
-	{
-		// --- for positive frequencies
-		if (phaseInc > 0 && moduloCounter >= 1.0)
-		{
-			moduloCounter -= 1.0;
-			return true;
-		}
+    /** check the modulo counter and wrap if needed */
+    inline bool checkAndWrapModulo(double& moduloCounter, double phaseInc)
+    {
+        // --- for positive frequencies
+        if (phaseInc > 0 && moduloCounter >= 1.0)
+        {
+            moduloCounter -= 1.0;
+            return true;
+        }
 
-		// --- for negative frequencies
-		if (phaseInc < 0 && moduloCounter <= 0.0)
-		{
-			moduloCounter += 1.0;
-			return true;
-		}
+        // --- for negative frequencies
+        if (phaseInc < 0 && moduloCounter <= 0.0)
+        {
+            moduloCounter += 1.0;
+            return true;
+        }
 
-		return false;
-	}
+        return false;
+    }
 
-	/** advanvce the modulo counter, then check the modulo counter and wrap if needed */
-	inline bool advanceAndCheckWrapModulo(double& moduloCounter, double phaseInc)
-	{
-		// --- advance counter
-		moduloCounter += phaseInc;
+    /** advanvce the modulo counter, then check the modulo counter and wrap if needed */
+    inline bool advanceAndCheckWrapModulo(double& moduloCounter, double phaseInc)
+    {
+        // --- advance counter
+        moduloCounter += phaseInc;
 
-		// --- for positive frequencies
-		if (phaseInc > 0 && moduloCounter >= 1.0)
-		{
-			moduloCounter -= 1.0;
-			return true;
-		}
+        // --- for positive frequencies
+        if (phaseInc > 0 && moduloCounter >= 1.0)
+        {
+            moduloCounter -= 1.0;
+            return true;
+        }
 
-		// --- for negative frequencies
-		if (phaseInc < 0 && moduloCounter <= 0.0)
-		{
-			moduloCounter += 1.0;
-			return true;
-		}
+        // --- for negative frequencies
+        if (phaseInc < 0 && moduloCounter <= 0.0)
+        {
+            moduloCounter += 1.0;
+            return true;
+        }
 
-		return false;
-	}
+        return false;
+    }
 
-	/** advanvce the modulo counter */
-	inline void advanceModulo(double& moduloCounter, double phaseInc) { moduloCounter += phaseInc; }
+    /** advanvce the modulo counter */
+    inline void advanceModulo(double& moduloCounter, double phaseInc) { moduloCounter += phaseInc; }
 
-	const double B = 4.0 / kPi;
-	const double C = -4.0 / (kPi * kPi);
-	const double P = 0.225;
-	/** parabolic sinusoidal calcualtion; NOTE: input is -pi to +pi http://devmaster.net/posts/9648/fast-and-accurate-sine-cosine */
-	inline double parabolicSine(double angle)
-	{
-		double y = B * angle + C * angle * fabs(angle);
-		y = P * (y * fabs(y) - y) + y;
-		return y;
-	}
+    const double B = 4.0 / kPi;
+    const double C = -4.0 / (kPi * kPi);
+    const double P = 0.225;
+    /** parabolic sinusoidal calcualtion; NOTE: input is -pi to +pi http://devmaster.net/posts/9648/fast-and-accurate-sine-cosine */
+    inline double parabolicSine(double angle)
+    {
+        double y = B * angle + C * angle * fabs(angle);
+        y = P * (y * fabs(y) - y) + y;
+        return y;
+    }
 };

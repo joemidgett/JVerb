@@ -15,17 +15,17 @@ Custom parameter structure for the Biquad object. Default version defines the bi
 */
 struct BiquadParameters
 {
-	BiquadParameters() {}
+    BiquadParameters() {}
 
-	/** all FXObjects parameter objects require overloaded= operator so remember to add new entries if you add new variables. */
-	BiquadParameters& operator=(const BiquadParameters& params)
-	{
-		if (this == &params)
-			return *this;
+    /** all FXObjects parameter objects require overloaded= operator so remember to add new entries if you add new variables. */
+    BiquadParameters& operator=(const BiquadParameters& params)
+    {
+        if (this == &params)
+            return *this;
 
-		biquadCalcType = params.biquadCalcType;
-		return *this;
-	}
+        biquadCalcType = params.biquadCalcType;
+        return *this;
+    }
 
-	biquadAlgorithm biquadCalcType = biquadAlgorithm::kDirect; ///< biquad structure to use
+    biquadAlgorithm biquadCalcType = biquadAlgorithm::kDirect; ///< biquad structure to use
 };
