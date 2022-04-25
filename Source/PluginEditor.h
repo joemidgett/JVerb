@@ -11,6 +11,7 @@
 #include <JuceHeader.h>
 #include "PluginProcessor.h"
 #include "GUI/JVerbLookAndFeel.h"
+#include "GUI/JVerbSlider.h"
 
 //==============================================================================
 /**
@@ -31,7 +32,7 @@ private:
     JVerbAudioProcessor& audioProcessor;
     JVerbLookAndFeel jVerbLnf;
 
-    juce::Slider jVerbSlider;
+    JVerbSlider jVerbSlider;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (JVerbAudioProcessorEditor)
 };
