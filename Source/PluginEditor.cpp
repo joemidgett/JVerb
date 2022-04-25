@@ -11,16 +11,31 @@
 
 //==============================================================================
 JVerbAudioProcessorEditor::JVerbAudioProcessorEditor (JVerbAudioProcessor& p)
-    : AudioProcessorEditor (&p), audioProcessor (p)
+    : AudioProcessorEditor (&p), audioProcessor (p),
+
+    jVerbDrySlider(*audioProcessor.apvts.getParameter("dryLevel_dB"), "dB"),
+    jVerbLowGainSlider(*audioProcessor.apvts.getParameter("lowShelfBoostCut_dB"), "dB"),
+    jVerbReverbTimeSlider(*audioProcessor.apvts.getParameter("kRT"), "Sec"),
+    jVerbHighGainSlider(*audioProcessor.apvts.getParameter("highShelfBoostCut_dB"), "dB"),
+    jVerbWetSlider(*audioProcessor.apvts.getParameter("wetLevel_dB"), "dB"),
+
+    jVerbDrySliderAttachment(audioProcessor.apvts.getParameter("dryLevel_dB"), jVerbDrySlider),
+    jVerbLowGainSliderAttachment(*audioProcessor.apvts.getParameter("lowShelfBoostCut_dB"), jVerbLowGainSlider),
+    jVerbReverbTimeSliderAttachment(*audioProcessor.apvts.getParameter("kRT"), jVerbReverbTimeSlider),
+    jVerbHighGainSliderAttachment(*audioProcessor.apvts.getParameter("highShelfBoostCut_dB"), jVerbHighGainSlider),
+    jVerbWetSliderAttachment(*audioProcessor.apvts.getParameter("wetLevel_dB"), jVerbWetSlider)
 {
     juce::LookAndFeel::setDefaultLookAndFeel(&jVerbLnf);
-    
-  
-    addAndMakeVisible(jVerbSlider);
+
+    addAndMakeVisible(jVerbDrySlider);
+    addAndMakeVisible(jVerbLowGainSlider);
+    addAndMakeVisible(jVerbReverbTimeSlider);
+    addAndMakeVisible(jVerbHighGainSlider);
+    addAndMakeVisible(jVerbWetSlider);
 
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
-    setSize (400, 300);
+    setSize (650, 225);
 }
 
 JVerbAudioProcessorEditor::~JVerbAudioProcessorEditor()

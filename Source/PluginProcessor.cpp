@@ -195,15 +195,20 @@ juce::AudioProcessorValueTreeState::ParameterLayout JVerbAudioProcessor::createP
 {
     juce::AudioProcessorValueTreeState::ParameterLayout layout;
 
-    layout.add(std::make_unique<juce::AudioParameterFloat>("kRT",
-        "Reverb Time",
-        juce::NormalisableRange<float>(0.0, 1.0, 0.01, 1.0),
-        0.9));
+    layout.add(std::make_unique<juce::AudioParameterFloat>("dryLevel_dB",
+        "Dry Level",
+        juce::NormalisableRange<float>(-60.0, 12.0, 0.01, 1.0),
+        0.0));
 
     layout.add(std::make_unique<juce::AudioParameterFloat>("lowShelfBoostCut_dB",
         "Low Shelf Gain",
         juce::NormalisableRange<float>(-20.0, 20.0, 0.01, 1.0),
         -20.0));
+
+    layout.add(std::make_unique<juce::AudioParameterFloat>("kRT",
+        "Reverb Time",
+        juce::NormalisableRange<float>(0.0, 1.0, 0.01, 1.0),
+        0.9));
 
     layout.add(std::make_unique<juce::AudioParameterFloat>("highShelfBoostCut_dB",
         "High Shelf Gain",
@@ -214,11 +219,6 @@ juce::AudioProcessorValueTreeState::ParameterLayout JVerbAudioProcessor::createP
         "Wet Level",
         juce::NormalisableRange<float>(-60.0, 12.0, 0.01, 1.0),
         -12.0));
-
-    layout.add(std::make_unique<juce::AudioParameterFloat>("dryLevel_dB",
-        "Dry Level",
-        juce::NormalisableRange<float>(-60.0, 12.0, 0.01, 1.0),
-        0.0));
 
     return layout;
 }
