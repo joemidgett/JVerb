@@ -16,4 +16,6 @@ JVerbSlider::JVerbSlider(juce::RangedAudioParameter& rap, const juce::String& un
 	
 	setColour(juce::Slider::ColourIds::rotarySliderFillColourId, juce::Colours::orange);
 	setColour(juce::Slider::thumbColourId, juce::Colours::orange);
+	setColour(juce::Slider::ColourIds::textBoxBackgroundColourId, juce::Colours::black);
+	setColour(juce::Slider::ColourIds::textBoxHighlightColourId, juce::Colours::darkgrey);
 }
