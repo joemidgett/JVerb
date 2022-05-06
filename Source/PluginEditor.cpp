@@ -33,6 +33,32 @@ JVerbAudioProcessorEditor::JVerbAudioProcessorEditor (JVerbAudioProcessor& p)
     addAndMakeVisible(jVerbHighGainSlider);
     addAndMakeVisible(jVerbWetSlider);
 
+    //jVerbDrySlider.setColour()
+    jVerbDrySlider.setColour(juce::Slider::rotarySliderOutlineColourId, juce::Colours::purple);
+    jVerbDrySlider.setColour(juce::Slider::ColourIds::rotarySliderFillColourId, juce::Colours::mediumpurple);
+    jVerbDrySlider.setColour(juce::Slider::thumbColourId, juce::Colours::rebeccapurple);
+    jVerbDrySlider.setColour(juce::Slider::ColourIds::textBoxHighlightColourId, juce::Colours::rebeccapurple);
+
+    jVerbLowGainSlider.setColour(juce::Slider::rotarySliderOutlineColourId, juce::Colours::deeppink);
+    jVerbLowGainSlider.setColour(juce::Slider::ColourIds::rotarySliderFillColourId, juce::Colours::pink);
+    jVerbLowGainSlider.setColour(juce::Slider::thumbColourId, juce::Colours::hotpink);
+    jVerbLowGainSlider.setColour(juce::Slider::ColourIds::textBoxHighlightColourId, juce::Colours::deeppink);
+
+    jVerbReverbTimeSlider.setColour(juce::Slider::rotarySliderOutlineColourId, juce::Colours::darkblue);
+    jVerbReverbTimeSlider.setColour(juce::Slider::ColourIds::rotarySliderFillColourId, juce::Colours::lightblue);
+    jVerbReverbTimeSlider.setColour(juce::Slider::thumbColourId, juce::Colours::cornflowerblue);
+    jVerbReverbTimeSlider.setColour(juce::Slider::ColourIds::textBoxHighlightColourId, juce::Colours::darkblue);
+
+    jVerbHighGainSlider.setColour(juce::Slider::rotarySliderOutlineColourId, juce::Colours::darkgreen);
+    jVerbHighGainSlider.setColour(juce::Slider::ColourIds::rotarySliderFillColourId, juce::Colours::lightgreen);
+    jVerbHighGainSlider.setColour(juce::Slider::thumbColourId, juce::Colours::lightseagreen);
+    jVerbHighGainSlider.setColour(juce::Slider::ColourIds::textBoxHighlightColourId, juce::Colours::darkgreen);
+
+    jVerbWetSlider.setColour(juce::Slider::rotarySliderOutlineColourId, juce::Colours::yellow);
+    jVerbWetSlider.setColour(juce::Slider::ColourIds::rotarySliderFillColourId, juce::Colours::lightyellow);
+    jVerbWetSlider.setColour(juce::Slider::thumbColourId, juce::Colours::lightgoldenrodyellow);
+    jVerbWetSlider.setColour(juce::Slider::ColourIds::textBoxHighlightColourId, juce::Colours::darkolivegreen);
+
     createJVerbLabel("Dry Gain - dB", jVerbDryLabel, jVerbDrySlider);
     createJVerbLabel("Low Gain - dB", jVerbLowGainLabel, jVerbLowGainSlider);
     createJVerbLabel("Reverb Time", jVerbReverbTimeLabel, jVerbReverbTimeSlider);
