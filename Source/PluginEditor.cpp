@@ -27,43 +27,23 @@ JVerbAudioProcessorEditor::JVerbAudioProcessorEditor (JVerbAudioProcessor& p)
 {
     juce::LookAndFeel::setDefaultLookAndFeel(&jVerbLnf);
 
-    addAndMakeVisible(jVerbDrySlider);
-    addAndMakeVisible(jVerbLowGainSlider);
-    addAndMakeVisible(jVerbReverbTimeSlider);
-    addAndMakeVisible(jVerbHighGainSlider);
-    addAndMakeVisible(jVerbWetSlider);
-
-    //jVerbDrySlider.setColour()
-    jVerbDrySlider.setColour(juce::Slider::rotarySliderOutlineColourId, juce::Colours::purple);
-    jVerbDrySlider.setColour(juce::Slider::ColourIds::rotarySliderFillColourId, juce::Colours::mediumpurple);
-    jVerbDrySlider.setColour(juce::Slider::thumbColourId, juce::Colours::rebeccapurple);
-    jVerbDrySlider.setColour(juce::Slider::ColourIds::textBoxHighlightColourId, juce::Colours::rebeccapurple);
-
-    jVerbLowGainSlider.setColour(juce::Slider::rotarySliderOutlineColourId, juce::Colours::deeppink);
-    jVerbLowGainSlider.setColour(juce::Slider::ColourIds::rotarySliderFillColourId, juce::Colours::pink);
-    jVerbLowGainSlider.setColour(juce::Slider::thumbColourId, juce::Colours::hotpink);
-    jVerbLowGainSlider.setColour(juce::Slider::ColourIds::textBoxHighlightColourId, juce::Colours::deeppink);
-
-    jVerbReverbTimeSlider.setColour(juce::Slider::rotarySliderOutlineColourId, juce::Colours::darkblue);
-    jVerbReverbTimeSlider.setColour(juce::Slider::ColourIds::rotarySliderFillColourId, juce::Colours::lightblue);
-    jVerbReverbTimeSlider.setColour(juce::Slider::thumbColourId, juce::Colours::cornflowerblue);
-    jVerbReverbTimeSlider.setColour(juce::Slider::ColourIds::textBoxHighlightColourId, juce::Colours::darkblue);
-
-    jVerbHighGainSlider.setColour(juce::Slider::rotarySliderOutlineColourId, juce::Colours::darkgreen);
-    jVerbHighGainSlider.setColour(juce::Slider::ColourIds::rotarySliderFillColourId, juce::Colours::lightgreen);
-    jVerbHighGainSlider.setColour(juce::Slider::thumbColourId, juce::Colours::lightseagreen);
-    jVerbHighGainSlider.setColour(juce::Slider::ColourIds::textBoxHighlightColourId, juce::Colours::darkgreen);
-
-    jVerbWetSlider.setColour(juce::Slider::rotarySliderOutlineColourId, juce::Colours::yellow);
-    jVerbWetSlider.setColour(juce::Slider::ColourIds::rotarySliderFillColourId, juce::Colours::lightyellow);
-    jVerbWetSlider.setColour(juce::Slider::thumbColourId, juce::Colours::lightgoldenrodyellow);
-    jVerbWetSlider.setColour(juce::Slider::ColourIds::textBoxHighlightColourId, juce::Colours::darkolivegreen);
+    modifyJVerbSliderColors(jVerbDrySlider, jVerbDryColorIds);
+    modifyJVerbSliderColors(jVerbLowGainSlider, jVerbLowGainColorIds);
+    modifyJVerbSliderColors(jVerbReverbTimeSlider, jVerbReverbColorIds);
+    modifyJVerbSliderColors(jVerbHighGainSlider, jVerbHighGainColorIds);
+    modifyJVerbSliderColors(jVerbWetSlider, jVerbWetColorIds);
 
     createJVerbLabel("Dry Gain - dB", jVerbDryLabel, jVerbDrySlider);
     createJVerbLabel("Low Gain - dB", jVerbLowGainLabel, jVerbLowGainSlider);
     createJVerbLabel("Reverb Time", jVerbReverbTimeLabel, jVerbReverbTimeSlider);
     createJVerbLabel("High Gain - dB", jVerbHighGainLabel, jVerbHighGainSlider);
     createJVerbLabel("Wet Gain - dB", jVerbWetLabel, jVerbWetSlider);
+
+    addAndMakeVisible(jVerbDrySlider);
+    addAndMakeVisible(jVerbLowGainSlider);
+    addAndMakeVisible(jVerbReverbTimeSlider);
+    addAndMakeVisible(jVerbHighGainSlider);
+    addAndMakeVisible(jVerbWetSlider);
 
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
@@ -99,4 +79,12 @@ void JVerbAudioProcessorEditor::createJVerbLabel(const juce::String& name, juce:
     label.setJustificationType(juce::Justification::centred);
     label.attachToComponent(&slider, false);
     addAndMakeVisible(label);
+}
+
+void JVerbAudioProcessorEditor::modifyJVerbSliderColors(JVerbSlider& slider, std::vector<juce::String> colours)
+{
+    slider.setColour(juce::Slider::rotarySliderOutlineColourId, juce::Colours::findColourForName(colours.at(0), defaultColor));
+    slider.setColour(juce::Slider::rotarySliderFillColourId, juce::Colours::findColourForName(colours.at(1), defaultColor));
+    slider.setColour(juce::Slider::thumbColourId, juce::Colours::findColourForName(colours.at(2), defaultColor));
+    slider.setColour(juce::Slider::textBoxHighlightColourId, juce::Colours::findColourForName(colours.at(3), defaultColor));
 }

@@ -27,6 +27,7 @@ public:
     void resized() override;
 
     void createJVerbLabel(const juce::String& name, juce::Label& label, JVerbSlider& slider);
+    void modifyJVerbSliderColors(JVerbSlider& slider, std::vector<juce::String> colours);
 
 private:
     // This reference is provided as a quick way for your editor to
@@ -54,6 +55,14 @@ private:
                 jVerbReverbTimeLabel, 
                 jVerbHighGainLabel, 
                 jVerbWetLabel;
+
+    std::vector<juce::String> jVerbDryColorIds { "purple", "mediumpurple", "rebeccapurple", "rebeccapurple"},
+                              jVerbLowGainColorIds { "deeppink", "pink", "hotpink", "deeppink" },
+                              jVerbReverbColorIds { "darkblue", "lightblue", "cornflowerblue", "darkblue" },
+                              jVerbHighGainColorIds { "darkgreen", "lightgreen", "lightseagreen", "darkgreen" },
+                              jVerbWetColorIds { "yellow", "lightyellow", "lightgoldenrodyellow", "darkolivegreen" };
+
+    juce::Colour defaultColor;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (JVerbAudioProcessorEditor)
 };
