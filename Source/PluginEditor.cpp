@@ -33,6 +33,12 @@ JVerbAudioProcessorEditor::JVerbAudioProcessorEditor (JVerbAudioProcessor& p)
     addAndMakeVisible(jVerbHighGainSlider);
     addAndMakeVisible(jVerbWetSlider);
 
+    createJVerbLabel("Dry Gain - dB", jVerbDryLabel, jVerbDrySlider);
+    createJVerbLabel("Low Gain - dB", jVerbLowGainLabel, jVerbLowGainSlider);
+    createJVerbLabel("Reverb Time", jVerbReverbTimeLabel, jVerbReverbTimeSlider);
+    createJVerbLabel("High Gain - dB", jVerbHighGainLabel, jVerbHighGainSlider);
+    createJVerbLabel("Wet Gain - dB", jVerbWetLabel, jVerbWetSlider);
+
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
     setSize (650, 225);
@@ -59,4 +65,12 @@ void JVerbAudioProcessorEditor::resized()
     jVerbReverbTimeSlider.setBounds(jVerbLowGainSlider.getBounds().withX(jVerbLowGainSlider.getRight()));
     jVerbHighGainSlider.setBounds(jVerbReverbTimeSlider.getBounds().withX(jVerbReverbTimeSlider.getRight()));
     jVerbWetSlider.setBounds(jVerbHighGainSlider.getBounds().withX(jVerbHighGainSlider.getRight()));
+}
+
+void JVerbAudioProcessorEditor::createJVerbLabel(const juce::String& name, juce::Label& label, JVerbSlider& slider)
+{
+    label.setText(name, juce::dontSendNotification);
+    label.setJustificationType(juce::Justification::centred);
+    label.attachToComponent(&slider, false);
+    addAndMakeVisible(label);
 }
