@@ -94,6 +94,10 @@ void JVerbAudioProcessor::changeProgramName (int index, const juce::String& newN
 void JVerbAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
     reverb.reset(sampleRate);
+    dryGainParamSmoother.initializeSmoothing(50, sampleRate);
+    lowGainParamSmoother.initializeSmoothing(50, sampleRate);
+    highGainParamSmoother.initializeSmoothing(50, sampleRate);
+    wetGainParamSmoother.initializeSmoothing(50, sampleRate);
 }
 
 void JVerbAudioProcessor::releaseResources()
@@ -228,14 +232,19 @@ void JVerbAudioProcessor::updateParameters()
 {
     ReverbTankParameters params = reverb.getParameters();
 
-    params.kRT = *apvts.getRawParameterValue("kRT");
+    params.dryLevel_dB = *apvts.getRawParameterValue("dryLevel_dB");
+    params.dryLevel_dB = dryGainParamSmoother.processSmoothing(params.dryLevel_dB);
 
     params.lowShelfBoostCut_dB = *apvts.getRawParameterValue("lowShelfBoostCut_dB");
+    params.lowShelfBoostCut_dB = lowGainParamSmoother.processSmoothing(params.lowShelfBoostCut_dB);
+
+    params.kRT = *apvts.getRawParameterValue("kRT");
 
     params.highShelfBoostCut_dB = *apvts.getRawParameterValue("highShelfBoostCut_dB");
+    params.highShelfBoostCut_dB = highGainParamSmoother.processSmoothing(params.highShelfBoostCut_dB);
 
     params.wetLevel_dB = *apvts.getRawParameterValue("wetLevel_dB");
-    params.dryLevel_dB = *apvts.getRawParameterValue("dryLevel_dB");
+    params.wetLevel_dB = wetGainParamSmoother.processSmoothing(params.wetLevel_dB);
 
     reverb.setParameters(params);
 }

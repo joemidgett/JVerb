@@ -10,10 +10,11 @@
 
 #include <JuceHeader.h>
 #include "DSP/ReverbTank.h"
+#include "DSP/ParamSmoother.h"
+
+class ParamSmoother;
 
 //==============================================================================
-/**
-*/
 class JVerbAudioProcessor  : public juce::AudioProcessor
 {
 public:
@@ -63,7 +64,10 @@ protected:
     void updateParameters();
 
 private:
-
+    ParamSmoother dryGainParamSmoother,
+                  lowGainParamSmoother,
+                  highGainParamSmoother,
+                  wetGainParamSmoother;
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (JVerbAudioProcessor)
 };
