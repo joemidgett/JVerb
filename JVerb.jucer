@@ -31,6 +31,9 @@
               file="Source/DSP/NestedDelayAPFParameters.h"/>
         <FILE id="GMtb1G" name="OscillatorParameters.h" compile="0" resource="0"
               file="Source/DSP/OscillatorParameters.h"/>
+        <FILE id="X7p7ke" name="ParamSmoother.cpp" compile="1" resource="0"
+              file="Source/DSP/ParamSmoother.cpp"/>
+        <FILE id="S4cnj8" name="ParamSmoother.h" compile="0" resource="0" file="Source/DSP/ParamSmoother.h"/>
         <FILE id="vw5Q6u" name="ReverbTank.h" compile="0" resource="0" file="Source/DSP/ReverbTank.h"/>
         <FILE id="ZMeo6o" name="ReverbTankParameters.h" compile="0" resource="0"
               file="Source/DSP/ReverbTankParameters.h"/>
