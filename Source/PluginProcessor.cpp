@@ -15,7 +15,7 @@ JVerbAudioProcessor::JVerbAudioProcessor()
      : AudioProcessor (BusesProperties()
                      #if ! JucePlugin_IsMidiEffect
                       #if ! JucePlugin_IsSynth
-                       .withInput  ("Input",  juce::AudioChannelSet::stereo(), true)
+                       .withInput ("Input",  juce::AudioChannelSet::stereo(), true)
                       #endif
                        .withOutput ("Output", juce::AudioChannelSet::stereo(), true)
                      #endif
@@ -135,7 +135,7 @@ bool JVerbAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) co
 void JVerbAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
     juce::ScopedNoDenormals noDenormals;
-    auto totalNumInputChannels  = getTotalNumInputChannels();
+    auto totalNumInputChannels = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
 
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
@@ -166,7 +166,6 @@ bool JVerbAudioProcessor::hasEditor() const
 
 juce::AudioProcessorEditor* JVerbAudioProcessor::createEditor()
 {
-    // return new juce::GenericAudioProcessorEditor(*this);
     return new JVerbAudioProcessorEditor (*this);
 }
 
