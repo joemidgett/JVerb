@@ -4,7 +4,7 @@ Reverb audio plug-in
 ![JVerb Screenshot](jverbscreenshot.png?raw=true "JVerb Screenshot")
 
 ## Installing
-1. Download plugin (Windows 10, Mac, Ubuntu Linux) "here"
+1. Download plugin (Windows 10, Mac, Ubuntu Linux) [here](https://github.com/joemidgett/JVerb/releases)
 2. Copy downloaded plugin to your DAW's VST/AU directory
 
 ## Building
