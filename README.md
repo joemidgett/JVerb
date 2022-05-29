@@ -1,8 +1,14 @@
 # JVerb
 Reverb audio plug-in
 
-## Install
-To install, place the .vst3 file in your plugin directory
+![JVerb Screenshot](jverbscreenshot.png?raw=true "JVerb Screenshot")
 
-## Support
-As of 05/06/22, this software has only been built on Windows 10 and tested on Ableton Live 10
+## Installing
+1. Download plugin (Windows 10, Mac, Ubuntu Linux) "here"
+2. Copy downloaded plugin to your DAW's VST/AU directory
+
+## Building
+1. Clone or download this repository
+2. Download and install [JUCE](https://juce.com/) This project uses the "Projucer" application from the JUCE website
+3. Open JVerb.jucer file with Projucer
+4. Open and build project in Visual Studio (Windows), Xcode (Mac), or Makefile (Linux)
